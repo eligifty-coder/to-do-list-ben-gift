@@ -1,0 +1,16 @@
+.todo-item-container {
+  /* border: 1px solid #ff2058; */
+  margin: 20px 0;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ff2058;
+}
+
+.delete-btn {
+  display: none;
+}
