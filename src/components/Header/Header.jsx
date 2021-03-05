@@ -18,7 +18,7 @@ const Header = () => {
 
     // dispatching the add todo action
     dispatch(addTodo({ title, date }));
-    setDate(null);
+    setDate("");
     setTitle("");
   };
 
