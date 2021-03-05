@@ -11,6 +11,10 @@
   color: #ff2058;
 }
 
-.delete-btn {
+.todo-item-container .delete-btn {
   display: none;
+}
+
+.todo-item-container:hover .delete-btn {
+  display: block;
 }
