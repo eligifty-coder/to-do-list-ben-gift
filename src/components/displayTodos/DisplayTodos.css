@@ -1,0 +1,95 @@
+.displayTodo{
+   width: 90%;
+   margin: 2rem auto;
+   max-width: 90%;
+}
+.displayTodo h2 {
+  border-bottom: 3px solid #ccc;
+  padding-bottom: 1rem;
+}
+.displayTodo ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.trash{
+   display: none;
+   color: #ff2058;
+}
+.displayTodo  li {
+  margin: 1rem 0;
+  padding: 1rem 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.26);
+  display:grid ;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  transition: all .2s ease-in-out;
+  position: relative;
+}
+.displayTodo li:hover .trash{
+   display: grid;
+   place-items: center;
+}
+.item{
+   display: grid;
+   grid-template-columns: auto 1fr;
+   align-items: center;
+   column-gap: 10px;
+}
+
+.time{
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   display: grid;
+   place-items: center;
+}
+.urgency{
+   height: 90px;
+   width: 50vw;
+   position: absolute;
+   left: 0;
+   top: 100%;
+   padding: 1rem;
+   margin-top: 17px;
+   border-radius: 5px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+   display: none;
+   z-index: 10;
+   background: #fff;
+}
+.lineThrough{
+   text-decoration: line-through;
+}
+.urgency::before{
+   content: "";
+   position: absolute;
+   left: 40%;
+   top: -18px;
+   width: 0;
+   height: 0;
+   border-left: 20px solid transparent;
+   border-right: 20px solid transparent;
+   border-bottom: 20px solid #ff2058;
+}
+.greenBefore::before{
+   border-bottom-color: green;
+}
+.displayTodo li:hover .urgency{
+   display: grid;
+   place-items: center;
+}
+.displayTodo li:hover .time{
+   display: none;
+}
+@media (min-width:700px){
+   .urgency{
+      width: 300px;
+   }
+}
+.red{
+   background: #ff2058;
+}
+.green{
+   background: green;
+}

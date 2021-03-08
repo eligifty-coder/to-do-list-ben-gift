@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Todo from './components/Todo/Todo'
+import Todo from './container/Todo/Todo'
 
 const App =props=>{
   return <Todo/>

@@ -1,18 +1,31 @@
-.todo-form{
-   width: 30rem;
+ .todo-form{
+   width: 90%;
    margin: 2rem auto;
-   max-width: 80%;
+   max-width: 90%;
+}
+.todo-form form{
+   display: grid;
+   align-items: center;
+   grid-template-columns:1fr auto;
+   column-gap:10%;
+   width:100%;
 }
 .form-control{
    display: grid;
-   grid-template-columns: 1fr;
+   grid-template-columns: 1fr ;
    margin: 1rem 0;
+   row-gap: 10px;
 }
+
+
 .form-control input{
    padding: 0.1rem 0.25rem;
    border: none;
    border-bottom: 2px solid #ccc;
    margin-bottom: 1rem;
+   font-size: 1.1rem;
+   width: 100%;
+   transition: all .8s ease-in-out;
 }
 .form-control label{
    padding-bottom: .2rem ;
@@ -21,8 +34,38 @@
    outline: none;
    border-bottom-color: #ff2058;
 }
+.input-container{
+   display: grid;
+   width: 100%;
+   grid-template-columns: 1fr 1fr;
+   column-gap: 10%;
+   }
 .form-action{
    display: grid;
    grid-template-columns: 1fr;
-   place-items: center;
+   align-self: center;
+   margin-top: 30px;
+}
+   
+@media (max-width:700px){
+   .form-action{
+      align-items: center;
+      justify-items: start;
+    }
+   .todo-form form{
+      grid-template-columns: 1fr;
+   }
+   .form-action{
+   margin-top:0;
+   }
+}
+@media (max-width:500px){
+   .input-container{
+   display: grid;
+   width: 100%;
+   grid-template-columns: 1fr;
+   }
+    .form-action{
+   margin-top:0;
+   }
 }
