@@ -8,7 +8,7 @@ export const addTodo= todo=>{
 
 export const deleteTodo= id=>{
    return {
-      type:actionTypes.ADD_TODO,
+      type:actionTypes.DELETE_TODO,
       todoId:id,
    }
 }

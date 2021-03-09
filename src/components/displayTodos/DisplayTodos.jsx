@@ -1,8 +1,8 @@
 import React from 'react'
 import { FaTrash } from 'react-icons/fa'
 
-import Card from '../UI/Card/Card'
 import './DisplayTodos.css'
+// Display todo
 const displayTodos=(props)=>{
    const determineTimeColor=(userTime)=>{
       const classesNames =['time']
@@ -17,6 +17,7 @@ const displayTodos=(props)=>{
       }
       return classesNames
    }
+   // added urgency color 
    const checkUrgency=(timeInputted)=>{
       const lineThrough = []
       const currentTime = new Date().getDate();
@@ -28,10 +29,10 @@ const displayTodos=(props)=>{
          textToAdd = <p>you have <span style={{ color: "green", fontSize: "1rem" , fontWeight:"bold",}}>{time} </span> days to go</p>
          classNames.push("greenBefore")
       }
-      if(time==1){
+      if(time===1){
          textToAdd = <p> You have just 24 hours to go.Treat as <span style={{ color: "#ff2058", fontSize: "1rem", fontWeight: "bold",}}>Urgent</span></p>
       }
-      if(time==0){
+      if(time===0){
          textToAdd = <p> You have less than 24 hours to go.Treat as <span style={{ color: "#ff2058", fontSize: "1rem", fontWeight: "bold",}}>Urgent</span></p>
       }
       if(time<=-1){
@@ -39,6 +40,10 @@ const displayTodos=(props)=>{
          lineThrough.push("lineThrough")
       }
       return { text: textToAdd, styles:classNames.join(' '), listStyle:lineThrough.join(" ")}
+   }
+   // delete single todo
+   const deletedTodo=(id)=>{
+      props.deleteTodos(id)
    }
    return(
       <section className="displayTodo">
@@ -54,7 +59,7 @@ const displayTodos=(props)=>{
                            <div className={checkUrgency(todo.dateAdded).styles}>{checkUrgency(todo.dateAdded).text}</div>
                         </div>
                      </div>
-                     <div className="trash"  >
+                     <div className="trash" onClick={deletedTodo.bind(this, todo.id)}>
                         <FaTrash  />
                      </div>
                   </li>

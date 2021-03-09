@@ -25,10 +25,10 @@ const Header=(props)=>{
       }
      
    }
+   // submit Button
    const submitTodo=(event)=>{
       event.preventDefault()
-      const store = props.storedTodo
-      if(enteredTodo=="" || enteredDate==""){
+      if(enteredTodo==="" || enteredDate===""){
         setModal(true)
          return
       }
@@ -49,7 +49,7 @@ const Header=(props)=>{
                <div className="input-container">
                   <div className="form-control">
                      <label htmlFor="title">What's on your mind</label>
-                     <input type="text" id="todo" name="todo" name="todo" placeholder="Visit The Beach 🏖️" onChange={(event)=>inputChange("todo", event)} value={enteredTodo} />
+                     <input type="text" id="todo"  name="todo" placeholder="Visit The Beach 🏖️" onChange={(event)=>inputChange("todo", event)} value={enteredTodo} />
                   </div>
                   <div className="form-control">
                      <label htmlFor="date">Expiration Date</label>
