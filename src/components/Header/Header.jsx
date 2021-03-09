@@ -57,7 +57,7 @@ const Header=(props)=>{
                   </div>
                </div>
                <div className="form-action">
-                  <button type="submit">Add Todo</button>
+                  <button type="submit">Submit</button>
                </div>
             </form>
          </Card>
